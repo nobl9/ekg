@@ -1,8 +1,9 @@
+clusterName: ${cluster_name}
+region: ${region}
+ampurl: ${amp_url}
 image:
   repository: ${image_repository}
   tag: ${image_tag}
   sha: ${image_sha}
-ampurl: ${amp_url}
-region: ${region}
 globalScrapeInterval: ${scrape_interval}
 globalScrapeTimeout: ${scrape_timeout}

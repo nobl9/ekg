@@ -12,12 +12,14 @@ spec:
   serviceAccount: adot-collector
   config: |
     processors:
-          batch/metrics:
-            timeout: 60s
+      batch/metrics:
+        timeout: 60s
 
     exporters:
       prometheusremotewrite:
         endpoint: {{ .Values.ampurl }}
+        const_labels:
+          kubernetes_cluster_name: {{ .Values.clusterName }}
         auth:
           authenticator: sigv4auth
       logging:

@@ -49,6 +49,14 @@ module "helm_addon" {
 
   set_values = [
     {
+      name  = "clusterName"
+      value = var.eks_cluster_id
+    },
+    {
+      name  = "ampurl"
+      value = "${local.amp_ws_endpoint}api/v1/remote_write"
+    },
+    {
       name  = "image.repository"
       value = var.adot_collector_image.repository
     },
@@ -59,10 +67,6 @@ module "helm_addon" {
     {
       name  = "image.sha"
       value = var.adot_collector_image.sha
-    },
-    {
-      name  = "ampurl"
-      value = "${local.amp_ws_endpoint}api/v1/remote_write"
     },
     {
       name  = "globalScrapeInterval"
