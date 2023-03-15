@@ -18,8 +18,6 @@ spec:
     exporters:
       prometheusremotewrite:
         endpoint: {{ .Values.ampurl }}
-        const_labels:
-          kubernetes_cluster_name: {{ .Values.clusterName }}
         auth:
           authenticator: sigv4auth
       logging:
@@ -38,6 +36,7 @@ spec:
       pipelines:
         metrics:
           receivers: [prometheus]
+          processors: [batch/metrics]
           exporters: [logging, prometheusremotewrite]
 
 
@@ -51,6 +50,8 @@ spec:
           global:
             scrape_interval: 15s
             scrape_timeout: 10s
+            external_labels:
+              kubernetes_cluster_name: {{ .Values.clusterName }}
 
           scrape_configs:
           - job_name: kubernetes-apiservers
