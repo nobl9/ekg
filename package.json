@@ -6,7 +6,8 @@
         "check-update-docs": "(ci/generate-docs.sh > /dev/null && git diff --quiet .) || (>&2 echo 'To fix the issue run ci/generate-docs.sh and commit changes' && exit 1)",
         "check-spelling": "cspell --no-progress '**/**'",
         "check-markdown": "markdownlint --ignore 'node_modules/' '**/*.md'",
-        "check-all": "npm run check-trailing-whitespaces && npm run check-words-list && npm run check-update-docs && npm run check-spelling && npm run check-markdown"
+        "check-terraform": "tflint --recursive",
+        "check-all": "npm run check-terraform && npm run check-trailing-whitespaces && npm run check-words-list && npm run check-update-docs && npm run check-spelling && npm run check-markdown"
     },
     "devDependencies": {
         "cspell": "^6.29.3",
