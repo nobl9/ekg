@@ -1,0 +1,28 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-all:
+    name: Run all CI checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Install terraform-docs
+        uses: jaxxstorm/action-install-gh-release@v1.10.0
+        with:
+          repo: terraform-docs/terraform-docs
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install JS based linters
+        run: npm ci
+      - name: Run all CI checks
+        run: npm run check-all
