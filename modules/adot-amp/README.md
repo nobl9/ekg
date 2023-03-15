@@ -25,7 +25,7 @@ collecting all metrics from a cluster.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_helm_addon"></a> [helm\_addon](#module\_helm\_addon) | github.com/aws-ia/terraform-aws-eks-blueprints//modules/kubernetes-addons/helm-addon | v4.20.0 |
-| <a name="module_operator"></a> [operator](#module\_operator) | github.com/aws-observability/terraform-aws-observability-accelerator//modules/add-ons/adot-operator | v1.6.1 |
+| <a name="module_operator"></a> [operator](#module\_operator) | github.com/aws-observability/terraform-aws-observability-accelerator//modules/eks-monitoring/add-ons/adot-operator | v2.0.0 |
 
 ## Resources
 

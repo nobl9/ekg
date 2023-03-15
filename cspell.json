@@ -1,0 +1,33 @@
+{
+	"version": "0.2",
+	"language": "en_US",
+	"dictionaries": [
+		"bash",
+		"companies",
+		"css",
+		"go",
+		"html",
+		"misc",
+		"softwareTerms"
+	],
+	"allowCompoundWords": true,
+	"useGitignore": true,
+	"ignorePaths": [
+		"**/*.lock",
+		"package.json"
+	],
+	"words": [
+		"adot",
+		"distro",
+		"irsa",
+		"Kuberhealthy",
+		"Nobl9",
+		"oidc",
+		"otel",
+		"pprof",
+		"sigv",
+		"tada",
+		"tfvars",
+		"zpages"
+	]
+}

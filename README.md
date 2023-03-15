@@ -7,9 +7,13 @@ Monitor the health of a Kubernetes cluster with ease.
 Deployment of EKG with default settings on existing EKS cluster. [Amazon Managed Service for Prometheus](https://aws.amazon.com/prometheus/)
 is created (optionally), and metrics are collected from [electrodes](./modules/electrodes):
 
-- [kube-state-metrics](modules/electrodes/kube-state-metrics/README.md) - metrics for the health of the various objects inside, such as deployments, nodes and pods
-- [node-problem-detector](modules/electrodes/node-problem-detector/README.md) - metrics for the health of the node e.g. infrastructure daemon issues: ntp service down, hardware issues e.g. bad CPU, memory or disk, kernel issues e.g. kernel deadlock, corrupted file system, container runtime issues e.g. unresponsive runtime daemon
-- [Kuberhealthy](modules/electrodes/kuberhealthy/README.md) - metrics for the health of the cluster, performs synthetic tests that ensures daemonsets, deployments can be deployed, DNS resolves names, etc.
+- [kube-state-metrics](modules/electrodes/kube-state-metrics/README.md) - metrics for the health of the various objects inside, such as
+    deployments, nodes and pods
+- [node-problem-detector](modules/electrodes/node-problem-detector/README.md) - metrics for the health of the node e.g. infrastructure daemon
+    issues: ntp service down, hardware issues e.g. bad CPU, memory or disk, kernel issues e.g. kernel deadlock, corrupted file system, container
+    runtime issues e.g. unresponsive runtime daemon
+- [Kuberhealthy](modules/electrodes/kuberhealthy/README.md) - metrics for the health of the cluster, performs synthetic tests that ensures daemonsets,
+    deployments can be deployed, DNS resolves names, etc.
 
 are sent to it by
 [AWS Distro for OpenTelemetry (ADOT)](https://aws-otel.github.io/). It collects metrics exposed by other services too,
@@ -19,6 +23,8 @@ The repository gives fine-grain control over what can be deployed or reused. For
 chosen electrodes, or all of them, reuse existing Amazon Managed Service for Prometheus, or install only ADOT.
 For details check the documentation of specific modules. Electrodes can be used with any Kubernetes cluster - EKS,
 GKE, on-premise, etc.
+
+To learn how to contribute please read [contribution guidelines](./CONTRIBUTING.md).
 
 ## End-to-end solution on fresh EKS cluster
 
@@ -68,8 +74,8 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.52.0 |
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.17.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.56.0 |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | 2.18.1 |
 
 ## Modules
 

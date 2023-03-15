@@ -6,9 +6,13 @@ Electrodes can be used with any Kubernetes cluster - EKS, GKE, on-premise, etc.
 
 Electrodes
 
-- [kube-state-metrics](./kube-state-metrics/README.md) - metrics for the health of the various objects inside, such as deployments, nodes and pods
-- [node-problem-detector](./node-problem-detector/README.md) - metrics for the health of the node e.g. infrastructure daemon issues: ntp service down, hardware issues e.g. bad CPU, memory or disk, kernel issues e.g. kernel deadlock, corrupted file system, container runtime issues e.g. unresponsive runtime daemon
-- [Kuberhealthy](./kuberhealthy/README.md) - metrics for the health of the cluster, performs synthetic tests that ensures daemonsets, deployments can be deployed, DNS resolves names, etc.
+- [kube-state-metrics](./kube-state-metrics/README.md) - metrics for the health of the various objects inside, such as
+    deployments, nodes and pods
+- [node-problem-detector](./node-problem-detector/README.md) - metrics for the health of the node e.g. infrastructure daemon
+    issues: ntp service down, hardware issues e.g. bad CPU, memory or disk, kernel issues e.g. kernel deadlock, corrupted file system, container
+    runtime issues e.g. unresponsive runtime daemon
+- [Kuberhealthy](./kuberhealthy/README.md) - metrics for the health of the cluster, performs synthetic tests that ensures daemonsets,
+    deployments can be deployed, DNS resolves names, etc.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
