@@ -11,7 +11,7 @@
         "check-all": "npm run check-terraform && npm run check-helm-chart && npm run check-trailing-whitespaces && npm run check-words-list && npm run check-update-docs && npm run check-spelling && npm run check-markdown"
     },
     "devDependencies": {
-        "cspell": "^6.29.3",
+        "cspell": "^6.30.2",
         "markdownlint-cli": "^0.33.0"
     }
 }
