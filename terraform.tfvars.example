@@ -1,0 +1,58 @@
+# AWS Region where your cluster is located.
+aws_region = "us-east-2" # replace with the region of your EKS cluster
+
+# Name of the EKS cluster.
+eks_cluster_id = "my-eks-cluster"
+
+# Nobl9 settings
+nobl9_organization_id = "my-nobl9-org-id" # If you don't have a Nobl9 org, sign up at https://app.nobl9.com/signup/
+# PLEASE NOTE: you will need to create an access key in Nobl9 and provide values for:
+# - nobl9_client_id
+# - nobl9_client_secret
+# You could code those in here, but because they are secrets, we recommend providing those as env vars, e.g.:
+# export TF_VAR_nobl9_client_id="<your Nobl9 Client ID>"
+# export TF_VAR_nobl9_client_secret="<your Nobl9 Client Secret>"
+
+# If you cannot or choose not to run any of the "electrodes", you can use these to skip creating SLOs that require them:
+# (Please note that you may suppress installation of an electrode if you already have it in-cluster, and in that case
+# you can leave it enabled here, assuming it provides the prerequisite metrics.)
+enable_kube_state_metrics_slos = true
+enable_kuberhealthy_slos = true
+enable_node_problem_detector_slos = true
+
+
+## Adjustable SLO settings
+#  These settings are all adjustable to allow you to customize based on expected behavior cluster by cluster.
+#  Visit https://github.com/nobl9/ekg/blob/main/modules/nobl9/README.md for documentation and recommendations
+
+# All SLOs:
+rolling_window_days = 7
+
+# Cluster Readiness:
+kuberhealthy_pod_start_latency = 180
+kuberhealthy_pod_start_latency_target = 0.99
+kuberhealthy_pod_start_success_target = 0.995
+
+# Control Plane Health:
+api_error_rate_target = 0.995
+api_latency_target = 0.995
+
+# Memory Headroom:
+memory_headroom_target = 0.99
+memory_headroom_threshold = 0.9
+memory_utilization_target = 0.99
+memory_utilization_threshold = 0.7
+
+# Node Health:
+node_problem_target = 0.99
+node_problem_threshold = 1
+node_not_ready_target = 0.99
+node_not_ready_threshold = 0
+
+# Workload Health:
+phase_running_target = 0.99
+phase_running_threshold = 0.7
+phase_failed_unknown_target = 0.99
+phase_failed_unknown_threshold = 1
+phase_pending_target = 0.99
+phase_pending_threshold = 0

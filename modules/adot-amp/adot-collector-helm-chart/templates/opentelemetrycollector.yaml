@@ -50,8 +50,6 @@ spec:
           global:
             scrape_interval: 15s
             scrape_timeout: 10s
-            external_labels:
-              kubernetes_cluster_name: {{ .Values.clusterName }}
 
           scrape_configs:
           - job_name: kubernetes-apiservers

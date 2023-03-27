@@ -31,3 +31,24 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "nobl9_organization_id" {
+  description = "Nobl9 Organization ID (visible in Nobl9 web app under Settings > Account)"
+  type        = string
+}
+
+variable "nobl9_project_name" {
+  description = "Nobl9 Project name (create one in the Nobl9 web app using Catalog > Projects, or use 'default')"
+  type        = string
+  default     = "default"
+}
+
+variable "nobl9_client_id" {
+  description = "Nobl9 Client ID (create in Nobl9 web app using Settings > Access Keys)"
+  type        = string
+}
+
+variable "nobl9_client_secret" {
+  description = "Nobl9 Client Secret (create in Nobl9 web app using Settings > Access Keys)"
+  type        = string
+}

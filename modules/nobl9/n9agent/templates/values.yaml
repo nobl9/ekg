@@ -1,0 +1,81 @@
+# Values for Nobl9 agent helm chart
+# starting point for this configuration: https://github.com/nobl9/helm-charts
+# -- Override the Namespace
+namespaceOverride:
+# -- Additional labels for created objects.
+extraLabels: {}
+
+deployment:
+  # -- Image used by chart
+  image: nobl9/agent
+  # -- Agent version (image tag)
+  version: "0.64.0"
+  # -- Image Pull Policy
+  pullPolicy: Always
+  # -- Additional Envs
+  extraEnvs:
+  - name: AWS_ACCESS_KEY_ID
+    valueFrom:
+      secretKeyRef:
+        key: aws_access_key_id
+        name: ${data_source_name}
+  - name: AWS_SECRET_ACCESS_KEY
+    valueFrom:
+      secretKeyRef:
+        key: aws_secret_access_key
+        name: ${data_source_name}
+
+resources:
+  requests:
+    # -- CPU request
+    cpu: "0.1"
+    # -- Memory request
+    memory: "350Mi"
+  limits:
+    # -- CPU limit
+    cpu: "1.0"
+    # -- Memory limit
+    memory: "1Gi"
+
+securityContext:
+  # -- Grants container a privileged status if set to true
+  allowPrivilegeEscalation: false
+  # -- ReadOnly file system mode if set to true
+  readOnlyRootFilesystem: true
+  # -- Runs the container as a root user if set to false
+  runAsNonRoot: true
+  # -- Runs the container with specified PID
+  runAsUser: 2000
+
+serviceAccount:
+  # -- Allow chart to create service account.
+  create: true
+  # -- Service account name. Generated from release name by default.
+  # name:
+  # -- Additional labels for service account.
+  labels: {}
+  # -- Service account annotations.
+  annotations: {}
+#    eks.amazonaws.com/role-arn: arn:aws:iam::1234567890:role/iam-role
+
+config:
+  # -- Nobl9 Project name
+  project: ${project_name}
+  # -- Nobl9 Organization name
+  organization: ${nobl9_organization_id}
+  # -- Nobl9 Data Source name
+  datasourceName: ${data_source_name}
+  # -- Nobl9 Client ID, creates secret with this value, leave empty and use deployment.extraEnvs to load from existing Secret
+  clientId: ${client_id}
+  # -- Nobl9 Client secret, creates secret with this value, leave empty and use deployment.extraEnvs to load from existing Secret
+  clientSecret: ${client_secret}
+
+  # -- Nobl9 API URL
+  intakeUrl: "https://app.nobl9.com/api/input"
+  # -- Nobl9 Auth Server ID
+  authServer: "auseg9kiegWKEtJZC416"
+  # -- Nobl9 Okta Organization URL
+  oktaOrgUrl: "https://accounts.nobl9.com"
+
+  # -- Populates N9_ALLOWED_URLS that limits the URLs which an Agent is able to query
+  # allowedUrls:

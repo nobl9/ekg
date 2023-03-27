@@ -14,9 +14,5 @@ terraform {
       source  = "hashicorp/helm"
       version = ">= 2.4.1"
     }
-    nobl9 = {
-      source  = "nobl9/nobl9"
-      version = "0.8.0"
-    }
   }
 }
