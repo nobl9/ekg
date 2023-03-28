@@ -125,8 +125,7 @@ information about these SLOs, how to use them, and how to tune them to your clus
 ### Inside your EKS cluster
 
 - kube-state-metrics
-
-- kuberhealthy
+- Kuberhealthy
 - node-problem-detector
 - Amazon Distro for OpenTelemetry (ADOT)
 - A Nobl9 Agent compatible with and connecting to Amazon Managed Service for Prometheus

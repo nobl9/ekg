@@ -48,9 +48,9 @@ Configuration for them is in the below files
 - [package.json](./package.json) - what checks are available (you don't need to always run all of them locally)
 
 - [cspell.json](./cspell.json) - missing words can be added to the dictionary (please maintain alphabetical order,
-    it checked by a special check too)
+    it is checked by a special check too)
 
-- [.markdownlint.json](./.markdownlint.json) - rules can be adjusted
+- [.markdownlint.json](./.markdownlint.json) - rules can be adjusted for files with `.md` extension
 
 ### Pull Request title
 

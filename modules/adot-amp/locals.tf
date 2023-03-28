@@ -13,7 +13,7 @@ locals {
   eks_cluster_endpoint = data.aws_eks_cluster.eks_cluster.endpoint
   eks_cluster_version  = data.aws_eks_cluster.eks_cluster.version
 
-  # if region is not passed, we assume the current one
+  # If region is not passed, we assume the current one.
   amp_ws_region   = coalesce(var.managed_prometheus_workspace_region, data.aws_region.current.name)
   amp_ws_create   = var.managed_prometheus_workspace_id == ""
   amp_ws_id       = local.amp_ws_create ? try(aws_prometheus_workspace.this[0].id, "") : var.managed_prometheus_workspace_id

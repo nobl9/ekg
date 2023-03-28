@@ -27,14 +27,14 @@ module "slos" {
   source       = "./slos"
   project_name = nobl9_project.this.name
 
-  # cluster settings
+  # Cluster settings.
   cluster_id = var.cluster_id
 
-  # nobl9 data source
+  # Nobl9 data source,
   data_source_name    = module.data_source.data_source_name
   data_source_project = nobl9_project.this.name
 
-  # pass through variables for SLO adjustable settings
+  # Pass through variables for SLO adjustable settings.
   enable_kube_state_metrics_slos        = var.enable_kube_state_metrics_slos
   enable_kuberhealthy_slos              = var.enable_kuberhealthy_slos
   enable_node_problem_detector_slos     = var.enable_node_problem_detector_slos

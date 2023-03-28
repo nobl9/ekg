@@ -1,3 +1,5 @@
+# [Nobl9 data source](https://docs.nobl9.com/Sources/)
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -36,6 +38,6 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_client_id"></a> [client\_id](#output\_client\_id) | Nobl9 Client ID of the data source |
-| <a name="output_client_secret"></a> [client\_secret](#output\_client\_secret) | Nobl9 Client Secret of the data source (NB: this is a secret -- a password) |
+| <a name="output_client_secret"></a> [client\_secret](#output\_client\_secret) | Nobl9 Client Secret of the data source (NB: this is a secret - a password) |
 | <a name="output_data_source_name"></a> [data\_source\_name](#output\_data\_source\_name) | Name (ID) of the agent data source in Nobl9 |
 <!-- END_TF_DOCS -->

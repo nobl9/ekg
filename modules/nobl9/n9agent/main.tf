@@ -13,8 +13,7 @@ resource "kubernetes_secret" "example" {
 }
 
 resource "helm_release" "n9agent" {
-  name = "nobl9-agent"
-  # https://github.com/nobl9/helm-charts
+  name       = "nobl9-agent"
   repository = "https://nobl9.github.io/helm-charts"
   chart      = "nobl9-agent"
   version    = var.chart_version

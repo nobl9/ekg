@@ -125,7 +125,8 @@ You can adjust this objective by modifying:
 
 ## Node Health
 
-This SLO uses node-problem-detector and kube-state-metrics to measure a variety of issues that can affect cluster nodes.
+This SLO uses [node-problem-detector](../electrodes/node-problem-detector/README.md)
+and [kube-state-metrics](../electrodes/kube-state-metrics/README.md) to measure a variety of issues that can affect cluster nodes.
 Especially in a cloud or other virtualized environment, where hardware is often short lived and managed through
 automation as fleets of resources, a degree of erroneous behavior is expected. This SLO gives you a way to put bounds on
 that misbehavior, whether it is due to passing issues that self heal, or simply the realities of operating computing

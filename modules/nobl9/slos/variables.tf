@@ -1,4 +1,3 @@
-
 variable "cluster_id" {
   description = "Name of the Kubernetes cluster"
   type        = string
@@ -22,7 +21,7 @@ variable "data_source_project" {
 variable "ekg_display_prefix" {
   description = "Prefix for Service and SLO objects in Nobl9"
   type        = string
-  default     = "\U0001F174\U0001F17A\U0001F176 " # unicode characters spelling EKG in block letters
+  default     = "\U0001F174\U0001F17A\U0001F176 " # Unicode characters spelling EKG in block letters.
 }
 
 variable "rolling_window_days" {

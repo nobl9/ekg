@@ -1,4 +1,4 @@
-# SLO adjustable settings
+# SLO adjustable settings.
 
 variable "rolling_window_days" {
   description = "Evaluation time period for EKG SLOs"
