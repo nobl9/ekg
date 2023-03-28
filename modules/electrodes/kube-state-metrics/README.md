@@ -34,7 +34,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | Version of Helm Chart | `string` | `"4.32.0"` | no |
+| <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | Version of Helm Chart | `string` | `"5.1.0"` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Namespace where Helm Chart will be installed | `string` | n/a | yes |
 
 ## Outputs
