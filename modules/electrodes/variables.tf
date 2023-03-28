@@ -1,23 +1,23 @@
 
 variable "namespace" {
-  type        = string
   description = "Namespace where electrodes will be installed"
+  type        = string
 }
 
 variable "enable_kube-state-metrics" {
+  description = "Install kube-state-metrics"
   type        = bool
   default     = true
-  description = "Install kube-state-metrics"
 }
 
 variable "enable_node-problem-detector" {
+  description = "Install node-problem-detector"
   type        = bool
   default     = true
-  description = "Install node-problem-detector"
 }
 
 variable "enable_kuberhealthy" {
+  description = "Install Kuberhealthy"
   type        = bool
   default     = true
-  description = "Install Kuberhealthy"
 }

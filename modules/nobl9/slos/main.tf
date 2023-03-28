@@ -11,7 +11,7 @@ resource "nobl9_service" "this" {
 }
 
 resource "nobl9_slo" "cluster-readiness" {
-  count  = var.enable_kuberhealthy_slos ? 1 : 0
+  count = var.enable_kuberhealthy_slos ? 1 : 0
 
   name             = "ekg-cluster-readiness-${replace(lower(var.cluster_id), " ", "-")}"
   display_name     = "${var.ekg_display_prefix} Cluster Readiness"
@@ -73,13 +73,13 @@ resource "nobl9_slo" "cluster-readiness" {
   }
 
   indicator {
-    name = var.data_source_name
+    name    = var.data_source_name
     project = var.data_source_project
   }
 }
 
 resource "nobl9_slo" "memory-headroom" {
-  count  = var.enable_kube_state_metrics_slos ? 1 : 0
+  count = var.enable_kube_state_metrics_slos ? 1 : 0
 
   name             = "ekg-memory-headroom-${replace(lower(var.cluster_id), " ", "-")}"
   display_name     = "${var.ekg_display_prefix} Memory Headroom"
@@ -141,13 +141,13 @@ resource "nobl9_slo" "memory-headroom" {
   }
 
   indicator {
-    name = var.data_source_name
+    name    = var.data_source_name
     project = var.data_source_project
   }
 }
 
 resource "nobl9_slo" "workload-health" {
-  count  = var.enable_kube_state_metrics_slos ? 1 : 0
+  count = var.enable_kube_state_metrics_slos ? 1 : 0
 
   name             = "ekg-workload-health-${replace(lower(var.cluster_id), " ", "-")}"
   display_name     = "${var.ekg_display_prefix} Workload Health"
@@ -227,7 +227,7 @@ resource "nobl9_slo" "workload-health" {
   }
 
   indicator {
-    name = var.data_source_name
+    name    = var.data_source_name
     project = var.data_source_project
   }
 }
@@ -307,13 +307,13 @@ resource "nobl9_slo" "control-plane-health" {
   }
 
   indicator {
-    name = var.data_source_name
+    name    = var.data_source_name
     project = var.data_source_project
   }
 }
 
 resource "nobl9_slo" "node-health" {
-  count  = (var.enable_kube_state_metrics_slos && var.enable_node_problem_detector_slos) ? 1 : 0
+  count = (var.enable_kube_state_metrics_slos && var.enable_node_problem_detector_slos) ? 1 : 0
 
   name             = "ekg-node-health-${replace(lower(var.cluster_id), " ", "-")}"
   display_name     = "${var.ekg_display_prefix} Node Health"
@@ -375,7 +375,7 @@ resource "nobl9_slo" "node-health" {
   }
 
   indicator {
-    name = var.data_source_name
+    name    = var.data_source_name
     project = var.data_source_project
   }
 }

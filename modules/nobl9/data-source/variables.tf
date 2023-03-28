@@ -1,6 +1,6 @@
 variable "amp_ws_endpoint" {
-  type        = string
   description = "Amazon Managed Prometheus endpoint"
+  type        = string
 }
 
 variable "aws_region" {

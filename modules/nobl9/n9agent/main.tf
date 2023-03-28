@@ -1,11 +1,11 @@
 resource "kubernetes_secret" "example" {
   metadata {
-    name = var.data_source_name
+    name      = var.data_source_name
     namespace = var.namespace
   }
 
   data = {
-    aws_access_key_id = aws_iam_access_key.nobl9-ekg.id
+    aws_access_key_id     = aws_iam_access_key.nobl9-ekg.id
     aws_secret_access_key = aws_iam_access_key.nobl9-ekg.secret
   }
 
@@ -13,7 +13,7 @@ resource "kubernetes_secret" "example" {
 }
 
 resource "helm_release" "n9agent" {
-  name       = "nobl9-agent"
+  name = "nobl9-agent"
   # https://github.com/nobl9/helm-charts
   repository = "https://nobl9.github.io/helm-charts"
   chart      = "nobl9-agent"
@@ -21,11 +21,11 @@ resource "helm_release" "n9agent" {
 
   values = [
     templatefile("${path.module}/templates/values.yaml", {
-      data_source_name = var.data_source_name
-      project_name = var.project_name
+      data_source_name      = var.data_source_name
+      project_name          = var.project_name
       nobl9_organization_id = var.nobl9_organization_id
-      client_id = var.agent_client_id
-      client_secret = var.agent_client_secret
+      client_id             = var.agent_client_id
+      client_secret         = var.agent_client_secret
     })
   ]
 

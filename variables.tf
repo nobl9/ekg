@@ -9,15 +9,15 @@ variable "eks_cluster_id" {
 }
 
 variable "namespace" {
+  description = "Namespace where electrodes will be installed"
   type        = string
   default     = "ekg-monitoring"
-  description = "Namespace where electrodes will be installed"
 }
 
 variable "create_namespace" {
+  description = "Namespace speciefed by variable namespace will be created, if not exists"
   type        = bool
   default     = true
-  description = "Namespace speciefed by variable namespace will be created, if not exists"
 }
 
 variable "managed_prometheus_workspace_id" {

@@ -4,8 +4,8 @@ variable "eks_cluster_id" {
 }
 
 variable "namespace" {
-  type        = string
   description = "Namespace where it should be installed"
+  type        = string
 }
 
 # Amazon Managed Prometheus
@@ -76,7 +76,6 @@ variable "prometheus_config" {
     global_scrape_interval = string
     global_scrape_timeout  = string
   })
-
   default = {
     global_scrape_interval = "15s"
     global_scrape_timeout  = "10s"
@@ -86,12 +85,12 @@ variable "prometheus_config" {
 
 # https://github.com/aws-observability/aws-otel-collector/releases
 variable "adot_collector_image" {
+  description = "Container image for ADOT collector"
   type = object({
     repository = string
     tag        = string
     sha        = string
   })
-
   default = {
     repository = "public.ecr.aws/aws-observability/aws-otel-collector"
     tag        = "v0.25.0"

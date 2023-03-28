@@ -7,8 +7,9 @@
         "check-spelling": "cspell --no-progress '**/**'",
         "check-markdown": "markdownlint --ignore 'node_modules/' '**/*.md'",
         "check-terraform": "tflint --recursive",
+        "check-terrafrom-formatting": "terraform fmt --recursive --check",
         "check-helm-chart": "helm lint modules/adot-amp/adot-collector-helm-chart --quiet",
-        "check-all": "npm run check-terraform && npm run check-helm-chart && npm run check-trailing-whitespaces && npm run check-words-list && npm run check-update-docs && npm run check-spelling && npm run check-markdown"
+        "check-all": "npm run check-terrafrom-formatting && npm run check-terraform && npm run check-helm-chart && npm run check-trailing-whitespaces && npm run check-words-list && npm run check-update-docs && npm run check-spelling && npm run check-markdown"
     },
     "devDependencies": {
         "cspell": "^6.30.2",
