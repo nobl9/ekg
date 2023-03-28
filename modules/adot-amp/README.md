@@ -42,7 +42,7 @@ collecting all metrics from a cluster.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_adot_collector_image"></a> [adot\_collector\_image](#input\_adot\_collector\_image) | https://github.com/aws-observability/aws-otel-collector/releases | <pre>object({<br>    repository = string<br>    tag        = string<br>    sha        = string<br>  })</pre> | <pre>{<br>  "repository": "public.ecr.aws/aws-observability/aws-otel-collector",<br>  "sha": "",<br>  "tag": "v0.25.0"<br>}</pre> | no |
+| <a name="input_adot_collector_image"></a> [adot\_collector\_image](#input\_adot\_collector\_image) | Container image for ADOT collector | <pre>object({<br>    repository = string<br>    tag        = string<br>    sha        = string<br>  })</pre> | <pre>{<br>  "repository": "public.ecr.aws/aws-observability/aws-otel-collector",<br>  "sha": "",<br>  "tag": "v0.25.0"<br>}</pre> | no |
 | <a name="input_eks_cluster_id"></a> [eks\_cluster\_id](#input\_eks\_cluster\_id) | Name of the EKS cluster | `string` | n/a | yes |
 | <a name="input_enable_alertmanager"></a> [enable\_alertmanager](#input\_enable\_alertmanager) | Creates Amazon Managed Service for Prometheus AlertManager for all workloads | `bool` | `false` | no |
 | <a name="input_enable_amazon_eks_adot"></a> [enable\_amazon\_eks\_adot](#input\_enable\_amazon\_eks\_adot) | Enables the ADOT Operator on the EKS Cluster | `bool` | `true` | no |

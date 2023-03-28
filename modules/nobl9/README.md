@@ -237,11 +237,11 @@ To adjust this objective, modify:
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | AWS Region | `string` | n/a | yes |
 | <a name="input_cluster_id"></a> [cluster\_id](#input\_cluster\_id) | Name of the Kubernetes cluster | `string` | n/a | yes |
 | <a name="input_enable_kube_state_metrics_slos"></a> [enable\_kube\_state\_metrics\_slos](#input\_enable\_kube\_state\_metrics\_slos) | Would you like to include SLOs that rely on kube-state-metrics? | `bool` | n/a | yes |
-| <a name="input_enable_kuberhealthy_slos"></a> [enable\_kuberhealthy\_slos](#input\_enable\_kuberhealthy\_slos) | Would you like to include SLOs that rely on kuberhealthy metrics? | `bool` | n/a | yes |
+| <a name="input_enable_kuberhealthy_slos"></a> [enable\_kuberhealthy\_slos](#input\_enable\_kuberhealthy\_slos) | Would you like to include SLOs that rely on Kuberhealthy metrics? | `bool` | n/a | yes |
 | <a name="input_enable_node_problem_detector_slos"></a> [enable\_node\_problem\_detector\_slos](#input\_enable\_node\_problem\_detector\_slos) | Would you like to include SLOs that rely on node-problem-detector? | `bool` | n/a | yes |
-| <a name="input_kuberhealthy_pod_start_latency"></a> [kuberhealthy\_pod\_start\_latency](#input\_kuberhealthy\_pod\_start\_latency) | Allowable duration of kuberhealthy check | `number` | n/a | yes |
-| <a name="input_kuberhealthy_pod_start_latency_target"></a> [kuberhealthy\_pod\_start\_latency\_target](#input\_kuberhealthy\_pod\_start\_latency\_target) | SLO reliability target for kuberhealthy pod start latency | `number` | n/a | yes |
-| <a name="input_kuberhealthy_pod_start_success_target"></a> [kuberhealthy\_pod\_start\_success\_target](#input\_kuberhealthy\_pod\_start\_success\_target) | SLO reliability target for kuberhealthy pod start success | `number` | n/a | yes |
+| <a name="input_kuberhealthy_pod_start_latency"></a> [kuberhealthy\_pod\_start\_latency](#input\_kuberhealthy\_pod\_start\_latency) | Allowable duration of Kuberhealthy check | `number` | n/a | yes |
+| <a name="input_kuberhealthy_pod_start_latency_target"></a> [kuberhealthy\_pod\_start\_latency\_target](#input\_kuberhealthy\_pod\_start\_latency\_target) | SLO reliability target for Kuberhealthy pod start latency | `number` | n/a | yes |
+| <a name="input_kuberhealthy_pod_start_success_target"></a> [kuberhealthy\_pod\_start\_success\_target](#input\_kuberhealthy\_pod\_start\_success\_target) | SLO reliability target for Kuberhealthy pod start success | `number` | n/a | yes |
 | <a name="input_memory_headroom_target"></a> [memory\_headroom\_target](#input\_memory\_headroom\_target) | SLO reliability target for memory headroom | `number` | n/a | yes |
 | <a name="input_memory_headroom_threshold"></a> [memory\_headroom\_threshold](#input\_memory\_headroom\_threshold) | Maximum allowable memory consumption (fraction of 1.0) | `number` | n/a | yes |
 | <a name="input_memory_utilization_target"></a> [memory\_utilization\_target](#input\_memory\_utilization\_target) | SLO reliability target for memory utilization | `number` | n/a | yes |
