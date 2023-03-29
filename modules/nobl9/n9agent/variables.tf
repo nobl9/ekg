@@ -27,9 +27,11 @@ variable "data_source_name" {
 variable "agent_client_id" {
   description = "Client ID of the data source agent (from Nobl9 UI: Integrations > Sources > [your data source] > Agent Configuration)"
   type        = string
+  sensitive   = true
 }
 
 variable "agent_client_secret" {
   description = "Client Secret of the data source agent (from Nobl9 UI: Integrations > Sources > [your data source] > Agent Configuration)"
   type        = string
+  sensitive   = true
 }

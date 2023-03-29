@@ -46,9 +46,11 @@ variable "nobl9_project_name" {
 variable "nobl9_client_id" {
   description = "Nobl9 Client ID (create in Nobl9 web app using Settings > Access Keys)"
   type        = string
+  sensitive   = true
 }
 
 variable "nobl9_client_secret" {
   description = "Nobl9 Client Secret (create in Nobl9 web app using Settings > Access Keys)"
   type        = string
+  sensitive   = true
 }

@@ -12,6 +12,8 @@ nobl9_organization_id = "my-nobl9-org-id" # If you don't have a Nobl9 org, sign 
 # You could code those in here, but because they are secrets, we recommend providing those as env vars, e.g.:
 # export TF_VAR_nobl9_client_id="<your Nobl9 Client ID>"
 # export TF_VAR_nobl9_client_secret="<your Nobl9 Client Secret>"
+# or using separate secret.tfvars file for them and ensure it is not checked out in the repository,
+# you can read more about there https://developer.hashicorp.com/terraform/tutorials/configuration-language/sensitive-variables.
 
 # If you cannot or choose not to run any of the "electrodes", you can use these to skip creating SLOs that require them:
 # (Please note that you may suppress installation of an electrode if you already have it in-cluster, and in that case

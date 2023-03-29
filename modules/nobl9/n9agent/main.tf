@@ -1,4 +1,4 @@
-resource "kubernetes_secret" "example" {
+resource "kubernetes_secret" "aws_credentials" {
   metadata {
     name      = var.data_source_name
     namespace = var.namespace
