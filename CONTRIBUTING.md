@@ -27,15 +27,13 @@ ci/generate-docs.sh
 
 and commit it to the repository (otherwise CI checks won't pass).
 
-Ensure that checks pass, perform
-
-to install the required dependencies perform the below command
+to install the required dependencies and ensure all checks pass, first perform the below command
 
 ```bash
 npm install
 ```
 
-to run all checks execute
+And then run all checks, executing the following command
 
 ```bash
 npm run check-all
@@ -54,4 +52,4 @@ Configuration for them is in the below files
 
 ### Pull Request title
 
-Try to be as more descriptive as you can in your Pull Request title.
+Try to be as descriptive as you can in your Pull Request title.
