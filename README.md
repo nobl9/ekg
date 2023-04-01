@@ -20,7 +20,7 @@ aspects of your clusters. EKG includes SLOs that measure several aspects of a cl
   - Is there at least some kind of workload running?
 - *Resource Efficiency*
   - Are resources underutilized in this cluster?
-  - Is the cluster scaling in such as way that it is making good use of resources, without endangering workloads?
+  - Is the cluster scaling in such a way that it is making good use of resources, without endangering workloads?
 - *Cost Efficiency* measurements have been proposed as future enhancement and are under consideration.
 
 These aspects of cluster behavior provide a gauge on how well Kubernetes (as an application) is running, as well as how
