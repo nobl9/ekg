@@ -206,13 +206,13 @@ To adjust this objective, modify:
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.0 |
-| <a name="requirement_nobl9"></a> [nobl9](#requirement\_nobl9) | 0.8.0 |
+| <a name="requirement_nobl9"></a> [nobl9](#requirement\_nobl9) | 0.26.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_nobl9"></a> [nobl9](#provider\_nobl9) | 0.8.0 |
+| <a name="provider_nobl9"></a> [nobl9](#provider\_nobl9) | 0.26.0 |
 
 ## Modules
 
@@ -226,7 +226,7 @@ To adjust this objective, modify:
 
 | Name | Type |
 |------|------|
-| [nobl9_project.this](https://registry.terraform.io/providers/nobl9/nobl9/0.8.0/docs/resources/project) | resource |
+| [nobl9_project.this](https://registry.terraform.io/providers/nobl9/nobl9/0.26.0/docs/resources/project) | resource |
 
 ## Inputs
 
