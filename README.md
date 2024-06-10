@@ -79,6 +79,8 @@ To learn how to contribute please read the [contribution guidelines](./CONTRIBUT
           how about following the steps in [this tutorial](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks)?
           The tutorial defaults to Terraform Cloud (which is quite nice) but for this exercise we recommend you click on the Terraform OSS
           tabs as you proceed.
+    - You need to configure [IAM OIDC provider for the EKS cluster](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html).
+      Tutorial linked above does it for you, but if you are using an existing cluster, you may need to do it manually.
 
 2. Create a `terraform.tfvars` file. A staring point can be found in `terraform.tfvars.example`
 

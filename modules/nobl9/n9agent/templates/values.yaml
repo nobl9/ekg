@@ -49,9 +49,9 @@ securityContext:
 
 serviceAccount:
   # -- Allow chart to create service account.
-  create: true
+  create: false
   # -- Service account name. Generated from release name by default.
-  # name:
+  name: ${service_account_name}
   # -- Additional labels for service account.
   labels: {}
   # -- Service account annotations.
