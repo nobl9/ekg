@@ -13,17 +13,7 @@ deployment:
   # -- Image Pull Policy
   pullPolicy: Always
   # -- Additional Envs
-  extraEnvs:
-  - name: AWS_ACCESS_KEY_ID
-    valueFrom:
-      secretKeyRef:
-        key: aws_access_key_id
-        name: ${data_source_name}
-  - name: AWS_SECRET_ACCESS_KEY
-    valueFrom:
-      secretKeyRef:
-        key: aws_secret_access_key
-        name: ${data_source_name}
+  extraEnvs: []
 
 resources:
   requests:
