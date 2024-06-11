@@ -291,14 +291,14 @@ resource "nobl9_slo" "control-plane-health" {
       good {
         amazon_prometheus {
           promql = <<EOT
-          sum(apiserver_request_slo_duration_seconds_bucket{job="kubernetes-apiservers",verb=~"POST|PUT|PATCH|DELETE",subresource!~"proxy|attach|log|exec|portforward",le="1"})
+          sum(apiserver_request_sli_duration_seconds_bucket{job="kubernetes-apiservers",verb=~"POST|PUT|PATCH|DELETE",subresource!~"proxy|attach|log|exec|portforward",le="1"})
           EOT
         }
       }
       total {
         amazon_prometheus {
           promql = <<EOT
-          sum(apiserver_request_slo_duration_seconds_count{job="kubernetes-apiservers",verb=~"POST|PUT|PATCH|DELETE",subresource!~"proxy|attach|log|exec|portforward"})
+          sum(apiserver_request_sli_duration_seconds_count{job="kubernetes-apiservers",verb=~"POST|PUT|PATCH|DELETE",subresource!~"proxy|attach|log|exec|portforward"})
           EOT
         }
       }
