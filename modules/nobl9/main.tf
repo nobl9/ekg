@@ -21,6 +21,7 @@ module "n9agent" {
   namespace             = var.namespace
   agent_client_id       = module.data_source.client_id
   agent_client_secret   = module.data_source.client_secret
+  cluster_id            = var.cluster_id
 }
 
 module "slos" {

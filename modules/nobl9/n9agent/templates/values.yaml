@@ -9,21 +9,11 @@ deployment:
   # -- Image used by chart
   image: nobl9/agent
   # -- Agent version (image tag)
-  version: "0.64.0"
+  version: "0.69.2"
   # -- Image Pull Policy
   pullPolicy: Always
   # -- Additional Envs
-  extraEnvs:
-  - name: AWS_ACCESS_KEY_ID
-    valueFrom:
-      secretKeyRef:
-        key: aws_access_key_id
-        name: ${data_source_name}
-  - name: AWS_SECRET_ACCESS_KEY
-    valueFrom:
-      secretKeyRef:
-        key: aws_secret_access_key
-        name: ${data_source_name}
+  extraEnvs: []
 
 resources:
   requests:
@@ -49,9 +39,9 @@ securityContext:
 
 serviceAccount:
   # -- Allow chart to create service account.
-  create: true
+  create: false
   # -- Service account name. Generated from release name by default.
-  # name:
+  name: ${service_account_name}
   # -- Additional labels for service account.
   labels: {}
   # -- Service account annotations.

@@ -35,3 +35,8 @@ variable "agent_client_secret" {
   type        = string
   sensitive   = true
 }
+
+variable "cluster_id" {
+  description = "Name of the Kubernetes cluster"
+  type        = string
+}

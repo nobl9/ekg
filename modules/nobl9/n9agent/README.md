@@ -26,11 +26,12 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_iam_access_key.nobl9-ekg](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_access_key) | resource |
-| [aws_iam_user.nobl9-ekg](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user) | resource |
-| [aws_iam_user_policy.nobl9-ekg-ro](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_user_policy) | resource |
+| [aws_iam_role.nobl9-ekg-ro](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy.nobl9-ekg-ro](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
 | [helm_release.n9agent](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
-| [kubernetes_secret.aws_credentials](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/secret) | resource |
+| [kubernetes_service_account.service_account](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/service_account) | resource |
+| [aws_caller_identity.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
+| [aws_eks_cluster.cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster) | data source |
 | [aws_iam_policy_document.nobl9-ekg-ro](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
@@ -40,6 +41,7 @@ No modules.
 | <a name="input_agent_client_id"></a> [agent\_client\_id](#input\_agent\_client\_id) | Client ID of the data source agent (from Nobl9 UI: Integrations > Sources > [your data source] > Agent Configuration) | `string` | n/a | yes |
 | <a name="input_agent_client_secret"></a> [agent\_client\_secret](#input\_agent\_client\_secret) | Client Secret of the data source agent (from Nobl9 UI: Integrations > Sources > [your data source] > Agent Configuration) | `string` | n/a | yes |
 | <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | Version of Helm Chart | `string` | `"1.0.4"` | no |
+| <a name="input_cluster_id"></a> [cluster\_id](#input\_cluster\_id) | Name of the Kubernetes cluster | `string` | n/a | yes |
 | <a name="input_data_source_name"></a> [data\_source\_name](#input\_data\_source\_name) | Name (ID) of the agent data source in Nobl9 | `string` | n/a | yes |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Namespace where Helm Chart will be installed | `string` | n/a | yes |
 | <a name="input_nobl9_organization_id"></a> [nobl9\_organization\_id](#input\_nobl9\_organization\_id) | Nobl9 Organization ID (visible in Nobl9 web app under Settings > Account) | `string` | n/a | yes |

@@ -1,15 +1,11 @@
-resource "kubernetes_secret" "aws_credentials" {
-  metadata {
-    name      = var.data_source_name
-    namespace = var.namespace
-  }
+data "aws_caller_identity" "this" {}
 
-  data = {
-    aws_access_key_id     = aws_iam_access_key.nobl9-ekg.id
-    aws_secret_access_key = aws_iam_access_key.nobl9-ekg.secret
-  }
+data "aws_eks_cluster" "cluster" {
+  name = var.cluster_id
+}
 
-  type = "Opaque"
+locals {
+  k8s_oidc_provider = replace(data.aws_eks_cluster.cluster.identity[0].oidc[0].issuer, "https://", "")
 }
 
 resource "helm_release" "n9agent" {
@@ -25,6 +21,7 @@ resource "helm_release" "n9agent" {
       nobl9_organization_id = var.nobl9_organization_id
       client_id             = var.agent_client_id
       client_secret         = var.agent_client_secret
+      service_account_name  = kubernetes_service_account.service_account.metadata[0].name
     })
   ]
 
@@ -36,13 +33,36 @@ resource "helm_release" "n9agent" {
   cleanup_on_fail = true
 }
 
-resource "aws_iam_user" "nobl9-ekg" {
-  name = "nobl9-ekg"
-  path = "/"
+resource "aws_iam_role" "nobl9-ekg-ro" {
+  name = "nobl9-ekg-ro-${var.cluster_id}"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = ["sts:AssumeRoleWithWebIdentity"]
+        Effect = "Allow"
+        Principal = {
+          Federated = "arn:aws:iam::${data.aws_caller_identity.this.account_id}:oidc-provider/${local.k8s_oidc_provider}"
+        }
+        Condition = {
+          StringEquals = {
+            "${local.k8s_oidc_provider}:sub" = "system:serviceaccount:${var.namespace}:nobl9-agent"
+          }
+        }
+      }
+    ]
+  })
 }
 
-resource "aws_iam_access_key" "nobl9-ekg" {
-  user = aws_iam_user.nobl9-ekg.name
+resource "kubernetes_service_account" "service_account" {
+  metadata {
+    name      = "nobl9-agent"
+    namespace = var.namespace
+    annotations = {
+      "eks.amazonaws.com/role-arn" = aws_iam_role.nobl9-ekg-ro.arn
+    }
+  }
 }
 
 data "aws_iam_policy_document" "nobl9-ekg-ro" {
@@ -53,8 +73,7 @@ data "aws_iam_policy_document" "nobl9-ekg-ro" {
   }
 }
 
-resource "aws_iam_user_policy" "nobl9-ekg-ro" {
-  name   = "nobl9-ekg"
-  user   = aws_iam_user.nobl9-ekg.name
+resource "aws_iam_role_policy" "nobl9-ekg-ro" {
   policy = data.aws_iam_policy_document.nobl9-ekg-ro.json
+  role   = aws_iam_role.nobl9-ekg-ro.id
 }
