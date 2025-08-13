@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Install terraform-docs
         uses: jaxxstorm/action-install-gh-release@v1
         with:
