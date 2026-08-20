@@ -19,7 +19,7 @@ jobs:
         with:
           repo: terraform-docs/terraform-docs
       - name: Install TFLint
-        uses: terraform-linters/setup-tflint@v3
+        uses: terraform-linters/setup-tflint@v6
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
