@@ -1,6 +1,6 @@
 module "operator" {
   # https://github.com/aws-observability/terraform-aws-observability-accelerator
-  source = "github.com/aws-observability/terraform-aws-observability-accelerator//modules/eks-monitoring/add-ons/adot-operator?ref=v2.0.0"
+  source = "github.com/aws-observability/terraform-aws-observability-accelerator//modules/eks-monitoring/add-ons/adot-operator?ref=v2.13.1"
 
   count = var.enable_amazon_eks_adot ? 1 : 0
 
