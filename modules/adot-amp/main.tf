@@ -32,7 +32,7 @@ EOF
 
 module "helm_addon" {
   # https://github.com/aws-ia/terraform-aws-eks-blueprints
-  source = "github.com/aws-ia/terraform-aws-eks-blueprints//modules/kubernetes-addons/helm-addon?ref=v4.20.0"
+  source = "github.com/aws-ia/terraform-aws-eks-blueprints//modules/kubernetes-addons/helm-addon?ref=v4.32.1"
   depends_on = [
     module.operator
   ]
